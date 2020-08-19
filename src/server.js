@@ -1,11 +1,11 @@
 /*const path  = require('path')*/
-const express = require('express')
-const app = express()
+var express = require('express')
+var app = express()
 
 /*const  publicDirectory = path.join(__dirname, '../public/')*/
 var mailDestino
 var nombre
-app.push('/',function(req,res){
+app.post('/',function(req,res){
     formulario = res.body
     mailDestino = formulario.mail;
     nombre = formulario.nombre;
