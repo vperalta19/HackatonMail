@@ -22,13 +22,18 @@ app.post('/sendMail',function(req,res){
         }
     });
 
-    var descripcion = 'Estimad@' + nombre + 'Contestamos a su duda'
-
     var mailOptions = {
         from: 'diplouade2020@gmail.com',
         to: mailDestino,
-        subject: 'Info DiploUade',
-        text: descripcion
+        // Subject of the message
+        subject: 'SendMail Test', 
+
+        // plaintext body
+        text: 'Hello to '+ nombre +'!',
+
+        // HTML body
+        html:'<p><b>Hello </b> '+ nombre +'</p>'+
+            '<p>Este es un Modelo de SendMail<br/></p>'
     };
 
     transporter.sendMail(mailOptions, function(error, info){
